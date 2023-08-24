@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Hi {{user.username}}
+Please check out the folowing task(s) in your account. They expire in 24 hours.
+{% if Expired_Todos %}
+      {% for todo in Expired_Todos %}
+        {{todo}}
+      {% endfor %}
+    {% endif %}
+
+{% endautoescape %}

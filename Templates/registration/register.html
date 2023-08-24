@@ -1,0 +1,35 @@
+{% extends "Todos/base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<form method="post" action="{% url 'users:register' %}" id="register_form">
+
+  <div class="form-group">
+    <p id="register_title">REGISTER</p>
+    
+    {% csrf_token %}
+    
+    <input type="email" name="email" placeholder="Email" value="{{data.email}}">
+    <input type="text" name="name" placeholder="Full Name" value="{{data.name}}">
+    <input type="text" name="username" placeholder="Username" value="{{data.username}}">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="password2" placeholder="Confirm Password">
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert">
+        <ul>
+          <li>{{message}}</li>
+        </ul>
+      </div>
+    {% endfor %}
+  {% endif %}
+    <button name="submit">Register</button>
+    <input type="hidden" name="next" value="{% url 'Todos:index' %}" />
+
+  </div>
+
+</form>
+
+{% endblock content %}

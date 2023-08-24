@@ -1,0 +1,77 @@
+{% extends "Todos/base.html" %}
+{% block content %}
+
+<div class="myProgress">
+  <div class="myBar" id="myBar2"></div>
+</div>
+<form id="post-form" method="post" action="{% url 'Todos:new_todo' %}">
+  {% csrf_token %}
+  <p class="titles">Enter Todo:</p>
+  <input type="text" id="todoDetail" name="todoDetail"> <br>
+  <p class="titles">Due Date:</p>
+  <input type="date" id="expiry_date" name="expiry_date" required> <br>
+  <input type="submit" id="submitButton">
+</form>
+<div class="todo_list">
+  <ul class="unorderedList">
+    {% for todo in todos %}
+      {% if todo in expiredTodos %}
+        {% if todo.status == True %}
+        <div class="outer-todo-item">
+          <div class="todo-item red" id="todo-item">
+            <li>{{ todo }} </li>
+            <p>
+              <a href="{% url 'Todos:delete_todo' todo.id %}"><i class="fas fa-trash" style="color: red;"></i></a>
+              <button class="complete-btn" id="checkComplete" name="checkcomplete"><i class="fas fa-check"></i></button>
+              <a href="{% url 'Todos:completed_todo' todo.id %}"><span class="communication"> Mark as Incomplete</span></a>
+            </p>
+          </div>
+        </div>
+        {% else %}
+        <div class="outer-todo-item">
+          <div class="todo-item red">
+            <li>{{ todo }} </li>
+            <p>
+              <a href="{% url 'Todos:edit_todo' todo.id %}"><i class="far fa-edit"></i></a>
+              <a href="{% url 'Todos:delete_todo' todo.id %}"><i class="fas fa-trash" style="color: red;"></i></a>
+              <i class="fa fa-times" aria-hidden="true"></i>
+              <a href="{% url 'Todos:completed_todo' todo.id %}"><span class="communication"> Mark as Complete</span></a>
+            </p>
+          </div>
+        </div>
+        {% endif %}
+      {% else %}
+
+    {% if todo.status == True %}
+    <div class="outer-todo-item">
+      <div class="todo-item" id="todo-item">
+        <li>{{ todo }} </li>
+        <p>
+          <a href="{% url 'Todos:delete_todo' todo.id %}"><i class="fas fa-trash" style="color: red;"></i></a>
+          <button class="complete-btn" id="checkComplete" name="checkcomplete"><i class="fas fa-check"></i></button>
+          <a href="{% url 'Todos:completed_todo' todo.id %}"><span class="communication"> Mark as Incomplete</span></a>
+        </p>
+      </div>
+    </div>
+    {% else %}
+    <div class="outer-todo-item">
+      <div class="todo-item">
+        <li>{{ todo }} </li>
+        <p>
+          <a href="{% url 'Todos:edit_todo' todo.id %}"><i class="far fa-edit"></i></a>
+          <a href="{% url 'Todos:delete_todo' todo.id %}"><i class="fas fa-trash" style="color: red;"></i></a>
+          <i class="fa fa-times" aria-hidden="true"></i>
+          <a href="{% url 'Todos:completed_todo' todo.id %}"><span class="communication"> Mark as Complete</span></a>
+        </p>
+      </div>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% empty %}
+    <li> No todos have been added yet. </li>
+    
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "Todos/base.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'users/css/login.css' %}">
+  <title>Login</title>
+</head>
+
+<body>
+  {% block content %}
+
+  <div class="container">
+    <form method="post" action="{% url 'users:login' %}" id="login-form">
+        <p id="logintitle">LOG IN</p>
+      {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" value="{{data.username}}">
+        <input type="password" name="password" placeholder="Password">
+      {% if messages %}
+      {% for message in messages %}
+        <div class="alert">
+          <ul>
+            <li>{{message}}</li>
+          </ul>
+        </div>
+      {% endfor %}
+    {% endif %}
+      <button class="login" name="submit">Log in</button>
+      <input type="hidden" name="next" value="{% url 'Todos:index' %}" />
+      <p class="login_register_link">Create an account  <a href="{% url 'users:register' %}">REGISTER</a></p>
+    </form>
+  </div>
+
+  {% endblock content %}
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% extends "Todos/base.html" %}
+
+{% block content %}
+
+<p>Edit entry:</p>
+
+<form action="{% url 'Todos:edit_todo' todo.id %}" method='post'> 
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="submit">Save changes</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Volumes/Vincent/Year 2/InternshipWork/Third_submission/tl_env/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from coverage.cmdline import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

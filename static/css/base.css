@@ -1,0 +1,531 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  background-color: #989ca7;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+.navbar{
+  height: 70px;
+  background-color: #5cdacb;
+  margin-bottom: 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+}
+
+li{
+  display: flex;
+  margin-left: 15px;
+}
+.navbar li{
+  float: left;
+}
+
+li a {
+  padding-top: 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 25px;
+  margin-right: 20px;
+  color: #fefefe; 
+}
+
+li a:hover{
+  color: #363753;
+  transition: all 0.6s;
+}
+
+span {
+  display: inline;
+  font-size: 25px;
+  margin-top: 20px;
+  color: rgb(11, 120, 253);
+}
+
+.push-right{
+  margin-right: 150px;
+}
+
+
+/* index.html */
+.index-card{
+  margin: auto;
+  width: 100%;
+  height: 50vh;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: #5cdacb;
+
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.outer-card{
+  width: 50%;
+  background-color: #363753;
+  margin: auto;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 65vh;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+.outer-card button{
+  margin-top: 30px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 35px;
+  width: 25%;
+  font-size: large;
+  background-color:#47d3c3;
+  border-radius: 6px;
+  border: none;
+}
+.outer-card a{
+  text-decoration: none;
+}
+
+
+.outer-card button:hover{
+  color: #fefefe;
+  font-size: larger;
+  background-color: #42aa9e;
+  transition: all 0.6s;
+  
+}
+
+#first-paragraph{
+  font-size: 150px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  color: #fefefe;
+  text-shadow: 6px 2px 4px rgba(0, 0, 0, 0.555);
+}
+
+#second-paragraph{
+  font-size: 55px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  color: #fefefe;
+  text-shadow: 6px 2px 4px rgba(0, 0, 0, 0.555);
+}
+
+/* Login page */
+.container{
+  display: flex; 
+  flex-direction: column;
+}
+
+.error{
+  display: flex;
+  margin: 40px;
+}
+
+label[for="id_username"],label[for="id_password"] {
+  color: #363753;
+  display: block;
+  font-size: 15px;
+  
+}
+
+#id_username, #id_password{
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: #47d3c3;
+  border-width: 3px;
+  height:20px;
+  width: 100%;
+  caret-color: transparent;
+  transition: all 0.5s ease;
+}
+
+#id_username:focus, #id_password:focus{
+  outline: none;
+}
+
+
+form{
+  margin-top: 6rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+form p{
+  font-size: 25px;
+  margin-top: 20px;
+  color: #47d3c3;
+}
+
+#logintitle{
+  font-size: 25px;
+  margin-top: 20px;
+  color: #47d3c3;
+  display: block;
+  text-align: center;
+}
+
+form span{
+  font-size: 25px;
+  margin-top: 20px;
+  color: #fefefe;
+ 
+}
+
+ul.errorlist.nonfield li {
+  color: #47d3c3; 
+}
+
+
+.login{
+  display: block;
+  margin: auto;
+  width:50%;
+  margin-top:50px;
+  height: 30px;
+  background-color: #47d3c3;
+  border: none;
+  color: #fefefe;
+  transition: all 0.6s;
+  border-radius: 5px;
+}
+
+.login:hover{
+  background-color: #fefefe;
+  color: #47d3c3;
+  cursor: pointer;
+}
+
+.login_register_link{
+  font-size: 12px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.login_register_link a {
+  color: #5cdacb;
+  text-decoration: none;
+}
+
+#login-form{
+ background-color:#dedee2;
+}
+
+#login-form input{
+  height: 24px;
+  width: 300px;
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  transition: all 0.6s;
+}
+
+#login-form input:hover{
+  height: 30px;
+}
+
+
+/* register page */
+.form-group{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #dedee2;
+  
+}
+
+.form-group input{
+  height: 24px;
+  width: 300px;
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  transition: all 0.6s;
+}
+
+.form-group input:hover{
+  height: 30px;
+}
+
+#register_form button{
+  display: block;
+  margin: auto;
+  width:50%;
+  margin-top:40px;
+  margin-bottom: 20px;
+  height: 30px;
+  background-color: #47d3c3;
+  border: none;
+  color: #fefefe;
+  transition: all 0.6s;
+  border-radius: 5px;
+}
+#register_title{
+  color: #42aa9e;
+}
+
+#register_form button:hover{
+  background-color: #fefefe;
+  color: #47d3c3;
+  cursor: pointer;
+}
+
+.big_card{
+  height: 200px;
+}
+
+.alert{
+  color: #42aa9e;
+  margin-left: 20px;
+}
+.login_register_link {
+  color: #fefefe;
+  margin-bottom: 20px;
+}
+
+.login_register_link a{
+  transition: all 0.6s ease;
+}
+
+.login_register_link a:hover{
+  color: #067769;
+}
+
+
+
+/* Todo List */
+label[for="id_status"], label[for="id_expiry_date"]{
+  color: #363753;
+  font-size: 15px;
+}
+
+#id_expiry_date{
+  padding: 0;
+  border: 0;
+}
+
+select#id_status{
+  border: none;
+  all: revert;
+  height: 20px;
+  background-color: white;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+
+.new_todo_div p:last-child{
+  display: table-cell;
+  width: auto;
+  
+}
+
+.new_todo_div p:nth-last-child(2){
+  display: table-cell;
+  margin-right: 10px;
+}
+
+input#id_expiry_date{
+  display: table-cell;
+  height: 20px;
+  background-color: white;
+  border-radius: 5px;
+  width: 130px;
+  padding-left: 5px;
+
+}
+
+.todo_form{
+  width: 50%;
+  margin-top: 50px;
+}
+
+input#id_text{
+  width: 70%;
+  border-radius: 5px;
+  height: 20px;
+  border: none;
+}
+
+.todo_form button{
+  height: 20px;
+  width: 80px;
+  display: flex;
+  margin-left: 150px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-top: 2px;
+  border: none;
+  border-radius: 5px;
+  background-color: #47d3c3;
+  color: #fefefe;
+  transition: all 0.6s;
+}
+
+.todo_form button:hover{
+  color: #47d3c3;
+  background-color:#fefefe
+}
+
+.todo_list{
+  background-color: white;
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-left: 220px;
+  border-radius: 5px;
+}
+
+.todo-item{
+  border-bottom: solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-width: 2px;
+  border-color: #47d3c3;
+  padding-left: 20px;
+  background-color: #fefefe;
+}
+
+.outer-todo-item{
+  height: 74px;
+  background-color: #989ca7;
+}
+
+.expiry_date{
+  font-size: 10px;
+}
+
+.complete-btn{
+  border-radius: 4px;
+  border: none;
+  font-size: 0.7rem;
+  background-color: rgba(28, 201, 63, 0.814);
+  height:20px;
+  padding-bottom: 2px;
+}
+
+.complete-btn i{
+  pointer-events: none;
+}
+
+div.todo-item{
+  transition: all 0.6s;
+}
+
+div.todo-item.painted{
+  opacity: 0.4;
+}
+
+div.todo-item.red{
+  background-color: rgb(255, 111, 111);
+}
+
+div.todo-item.red.painted{
+  background-color: rgb(255, 111, 111);
+}
+
+span.communication{
+  font-size: 12px;
+  background-color: #47d3c3;
+  color: #fefefe;
+  border-radius: 2px;
+}
+
+.todo-item p a{
+  text-decoration: none !important;
+  margin-right: 5px;
+}
+
+.todo-item p a span{
+  margin-left: 150px;
+}
+
+p.titles{
+  margin-bottom: 2px;
+  
+}
+
+form#post-form{
+  margin-top: 20px;
+  width:60%;
+  margin-bottom: 15px;
+
+}
+
+input#todoDetail{
+  width: 50%;
+}
+
+input#submitButton{
+  background-color: #47d3c3;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 30px;
+  height: 20px;
+  width: 80px;
+  color: #fefefe;
+  transition: all 0.6s;
+}
+
+input#submitButton:hover{
+  color: #47d3c3;
+  background-color: #fefefe;
+}
+
+/* my progress bar */
+.myProgress {
+  width: 60%;
+  background-color: #cfc4c4;
+  border-radius: 4px;
+  margin-left: 15%;
+  height: 15px;
+  margin-top: 80px;
+
+}
+.myBar {
+  width: 0%;
+  height: 15px;
+  background-color: #47d3c3;
+  text-align:center;
+  line-height: 30px;
+  color: #fefefe;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
