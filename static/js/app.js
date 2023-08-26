@@ -2,7 +2,7 @@
 checkButtonList = document.querySelectorAll(".complete-btn");
 listTotal = document.querySelectorAll(".outer-todo-item");
 // listeners
-if(window.location.href === 'https://web-production-c410.up.railway.app/new_todo/') {
+if(window.location.href.includes('new_todo')) {
   document.addEventListener('DOMContentLoaded', move())
 }
 document.addEventListener('DOMContentLoaded', function (e) {
